@@ -2,17 +2,12 @@
 
 Map::Map() {}
 Map::Map(int width, int height) {
-    // TODO:
-    // 1. m_width = width;
-    // 2. m_height = height;
-    // 3. Redimensionner m_tiles avec height lignes
-    // 4. Pour chaque ligne, redimensionner avec width colonnes
-
-    // Indice pour le redimensionnement :
-    // m_tiles.resize(height);
-    // for (int i = 0; i < height; i++) {
-    //     m_tiles[i].resize(width);
-    // }
+    this->m_height = height;
+    this->m_width = width;
+    this->m_tiles.resize(height);
+    for (int i = 0; i < height; i++) {
+        m_tiles[i].resize(width);
+    }
 }
 
 int Map::getWidth() const
@@ -26,9 +21,11 @@ int Map::getHeight() const
 }
 
 
-void Map::setObject(int row, int col, ObjectType type)
-{
-
+void Map::setObject(int row, int col, ObjectType type) {
+    m_tiles[row][col].setType(type);
+}
+Tile& Map::getTile(int row, int col) {
+    return m_tiles[row][col];
 }
 /*
 

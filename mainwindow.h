@@ -2,10 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
 #include <QGraphicsItem>
 #include <QGraphicsView>
 #include <QGraphicsScene>
+#include "map.h"  // ← Avez-vous ajouté ceci ?
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -30,5 +30,6 @@ private:
     QGraphicsScene *mainScene;
     QGraphicsItem *tree;
 
+    Map* myMap;  // ← Et ajouté ceci ?
 };
 #endif // MAINWINDOW_H
